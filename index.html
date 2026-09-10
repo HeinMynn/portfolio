@@ -9,7 +9,7 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script>try{const t=localStorage.getItem('theme');document.documentElement.dataset.theme=t==='light'||t==='dark'?t:matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}catch{}</script>
   <link rel="stylesheet" href="css/style.css">
   <script src="js/main.js" defer></script>
@@ -29,42 +29,64 @@
   <main id="main">
     <section id="home" class="hero container" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="eyebrow">AHM / Software developer</p>
-        <h1 id="hero-title">Useful software.<br><span>Thoughtfully built.</span></h1>
+        <p class="eyebrow">AHM <span class="eyebrow-divider">/</span> Software developer</p>
+        <h1 id="hero-title">Web applications.<br>Browser tools.<br><span>Built with care.</span></h1>
         <p class="hero-description">I build web applications and browser tools that make everyday tasks simpler. From discovering local businesses to switching accounts without the extra login.</p>
         <div class="actions"><a class="button primary" href="#projects">Explore my work <span aria-hidden="true">↗</span></a><a class="button secondary" href="#contact">Let's talk <span aria-hidden="true">↗</span></a></div>
         <p class="availability"><span aria-hidden="true"></span>Open to freelance projects & new opportunities</p>
       </div>
       <a class="hero-feature" href="#switchboard">
-        <div class="feature-top"><span>Featured project</span><span aria-hidden="true">↗</span></div>
+        <div class="feature-top"><span>Inside the work / 01</span><span aria-hidden="true">↗</span></div>
         <img src="assets/switchboard-site.jpg" width="1280" height="800" alt="Switchboard website with an example account list." fetchpriority="high">
         <div class="feature-bottom"><strong>Switchboard</strong><span>Less signing in. More doing.</span></div>
       </a>
     </section>
     <section id="projects" class="container section" aria-labelledby="work-title">
-      <div class="section-heading"><div><p class="eyebrow">01 / Selected work</p><h2 id="work-title">Ideas, put to work.</h2></div><p>Browser tools, web applications,<br>and websites for real businesses.</p></div>
+      <div class="section-heading"><div><p class="eyebrow">01 / Projects</p><h2 id="work-title">Selected projects.</h2></div><p>Browser tools, web applications,<br>and websites for real businesses.</p></div>
       <div class="projects-grid">
-        <article class="project featured" id="switchboard">
-          <a class="project-image" href="assets/switchboard-site.jpg" target="_blank" rel="noopener" aria-label="View full Switchboard screenshot (opens in a new tab)"><img src="assets/switchboard-site.jpg" width="1280" height="800" alt="Switchboard landing page showing local account switching and a saved account list." loading="lazy"></a>
-          <div class="project-body"><p class="eyebrow">Browser extension / Open source</p><h3>Switchboard</h3><p>One browser. Your different accounts. Save and switch website sessions with account data stored locally on your device.</p><ul class="tags" aria-label="Switchboard features"><li>Session management</li><li>Local storage</li><li>Chrome & Firefox</li></ul><div class="project-links"><a href="https://chromewebstore.google.com/detail/switchboard/ejcnljkokdiiedibolfkkbkdeebjiiln" target="_blank" rel="noopener noreferrer">Chrome Web Store <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a><a href="https://github.com/HeinMynn/switchboard-extension" target="_blank" rel="noopener noreferrer">Source code <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></div></div>
+        <article class="project featured" id="switchboard" aria-labelledby="switchboard-title">
+          <div class="featured-intro">
+            <div class="project-body">
+              <p class="eyebrow">Featured / Browser extension</p>
+              <h3 id="switchboard-title">Switchboard<span class="project-dot">.</span></h3>
+              <p class="featured-summary">Different accounts.<br>One familiar browser.</p>
+              <p>A local account manager for moving between personal, work, and client sessions without repeating the login routine.</p>
+              <ul class="tags" aria-label="Switchboard technologies"><li>JavaScript</li><li>WebExtensions</li><li>Web Crypto</li></ul>
+              <div class="project-links">
+                <a class="button primary" href="https://chromewebstore.google.com/detail/switchboard/ejcnljkokdiiedibolfkkbkdeebjiiln" target="_blank" rel="noopener noreferrer">Try extension <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
+                <a href="https://github.com/HeinMynn/switchboard-extension" target="_blank" rel="noopener noreferrer">View source <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
+              </div>
+            </div>
+            <div class="featured-visual">
+              <div class="visual-caption"><span>Switchboard / Product preview</span><span>01</span></div>
+              <a class="project-image" href="assets/switchboard-site.jpg" target="_blank" rel="noopener" aria-label="View full Switchboard screenshot (opens in a new tab)"><img src="assets/switchboard-site.jpg" width="1280" height="800" alt="Switchboard product website showing an example of saved work and personal accounts." loading="lazy"></a>
+              <p class="visual-note">Local account switching for Chrome & Firefox.</p>
+            </div>
+          </div>
+          <div class="engineering-notes" aria-label="Switchboard engineering decisions">
+            <div><span class="note-number">01 / The problem</span><h4>One site, multiple identities.</h4><p>Repeated sign-ins interrupt the workflow. Saved accounts need to be easy to find and deliberate to switch.</p></div>
+            <div><span class="note-number">02 / The approach</span><h4>Use the browser's strengths.</h4><p>Chrome saves and restores named cookie snapshots. Firefox uses native containers to keep accounts open side by side.</p></div>
+            <div><span class="note-number">03 / The tradeoff</span><h4>Keep the boundaries clear.</h4><p>Chrome has one active account per site. Cookies alone cannot restore every site's session; a recovery journal protects interrupted switches.</p></div>
+          </div>
+          <div class="source-note"><span>Implementation notes from the public repository.</span><a href="https://github.com/HeinMynn/switchboard-extension#how-it-works" target="_blank" rel="noopener noreferrer">Explore the architecture <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></div>
         </article>
         <article class="project">
           <a class="project-image" href="assets/shwereview.jpg" target="_blank" rel="noopener" aria-label="View full ShweReview screenshot (opens in a new tab)"><img src="assets/shwereview.jpg" width="1280" height="800" alt="ShweReview homepage with business search and category filters." loading="lazy"></a>
-          <div class="project-body"><p class="eyebrow">Web application</p><h3>ShweReview</h3><p>A place to discover local businesses, explore categorized listings, and share community reviews.</p><ul class="tags" aria-label="ShweReview features"><li>Business discovery</li><li>Search & reviews</li></ul><div class="project-links"><a href="https://shwereview.vercel.app/" target="_blank" rel="noopener noreferrer">Visit ShweReview <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></div></div>
+          <div class="project-body"><p class="eyebrow">02 / Web application</p><h3>ShweReview</h3><p>A place to discover local businesses, explore categorized listings, and share community reviews.</p><ul class="tags" aria-label="ShweReview features"><li>Business discovery</li><li>Search & reviews</li></ul><div class="project-links"><a href="https://shwereview.vercel.app/" target="_blank" rel="noopener noreferrer">Visit ShweReview <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></div></div>
         </article>
         <article class="project">
           <a class="project-image" href="assets/nanhtikeshwe.jpg" target="_blank" rel="noopener" aria-label="View full Nan Htike Shwe screenshot (opens in a new tab)"><img src="assets/nanhtikeshwe.jpg" width="1280" height="800" alt="Nan Htike Shwe storefront featuring handcrafted scarves and shawls." loading="lazy"></a>
-          <div class="project-body"><p class="eyebrow">E-commerce</p><h3>Nan Htike Shwe</h3><p>A storefront for handcrafted scarves and shawls, bringing product discovery, a custom cart, and local payments together.</p><ul class="tags" aria-label="Nan Htike Shwe features"><li>Online storefront</li><li>Local payments</li></ul><div class="project-links"><a href="https://nanhtikeshwe.com/" target="_blank" rel="noopener noreferrer">Visit Nan Htike Shwe <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></div></div>
+          <div class="project-body"><p class="eyebrow">03 / E-commerce</p><h3>Nan Htike Shwe</h3><p>A storefront for handcrafted scarves and shawls, bringing product discovery, a custom cart, and local payments together.</p><ul class="tags" aria-label="Nan Htike Shwe features"><li>Online storefront</li><li>Local payments</li></ul><div class="project-links"><a href="https://nanhtikeshwe.com/" target="_blank" rel="noopener noreferrer">Visit Nan Htike Shwe <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></div></div>
         </article>
         <article class="project">
           <a class="project-image" href="assets/amberbeila.jpg" target="_blank" rel="noopener" aria-label="View full Amber Beila screenshot (opens in a new tab)"><img src="assets/amberbeila.jpg" width="1280" height="800" alt="Amber Beila website with skincare services and an appointment action." loading="lazy"></a>
-          <div class="project-body"><p class="eyebrow">Business website</p><h3>Amber Beila</h3><p>A website for a Singapore beauty and skincare salon, helping visitors explore treatments and find their next appointment.</p><ul class="tags" aria-label="Amber Beila features"><li>Service discovery</li><li>Appointment journey</li></ul><div class="project-links"><a href="https://amberbeila.com/" target="_blank" rel="noopener noreferrer">Visit Amber Beila <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></div></div>
+          <div class="project-body"><p class="eyebrow">04 / Business website</p><h3>Amber Beila</h3><p>A website for a Singapore beauty and skincare salon, helping visitors explore treatments and find their next appointment.</p><ul class="tags" aria-label="Amber Beila features"><li>Service discovery</li><li>Appointment journey</li></ul><div class="project-links"><a href="https://amberbeila.com/" target="_blank" rel="noopener noreferrer">Visit Amber Beila <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></div></div>
         </article>
       </div>
     </section>
     <section id="about" class="container section about" aria-labelledby="about-title">
-      <div><p class="eyebrow">02 / Behind the work</p><h2 id="about-title">Care in the details.<br>Clarity in the code.</h2></div>
-      <div class="about-copy"><p>I'm AHM, a software developer focused on useful, maintainable web software. I enjoy connecting a clear interface with the systems that make it work.</p><p>My work spans business websites, e-commerce, and browser extensions. I care about clean architecture, accessible interfaces, and making complex tasks feel straightforward.</p><h3>Technologies I work with</h3><ul class="tags technologies"><li>JavaScript & TypeScript</li><li>HTML & CSS</li><li>Node.js & Express</li><li>SQL & NoSQL</li><li>Git & CI/CD</li></ul></div>
+      <div><p class="eyebrow">02 / About me</p><h2 id="about-title">How I build.</h2></div>
+      <div class="about-copy"><p>I'm AHM, a software developer focused on useful, maintainable web software. I enjoy connecting a clear interface with the systems that make it work.</p><p>My work spans business websites, e-commerce, and browser extensions. I care about clean architecture, accessible interfaces, and making complex tasks feel straightforward.</p><h3>Tools I work with</h3><ul class="tags technologies"><li>JavaScript & TypeScript</li><li>HTML & CSS</li><li>Node.js & Express</li><li>SQL & NoSQL</li><li>Git & CI/CD</li></ul></div>
     </section>
     <section id="contact" class="container section" aria-labelledby="contact-title"><div class="contact-panel"><div><p class="eyebrow">03 / Let's connect</p><h2 id="contact-title">Have something<br>in mind?</h2><p>Tell me what you're building, where you need help,<br class="desktop-break"> or what you'd like to explore together.</p></div><div class="contact-actions"><a class="button primary" href="mailto:info@aungheinmynn.dev">Send me an email <span aria-hidden="true">↗</span></a><a class="email-link" href="mailto:info@aungheinmynn.dev">info@aungheinmynn.dev</a><a class="text-link" href="https://github.com/HeinMynn" target="_blank" rel="noopener noreferrer">Find me on GitHub <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></div></div></section>
   </main>
