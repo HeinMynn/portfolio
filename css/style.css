@@ -579,3 +579,13 @@ h1 { font-size: clamp(42px, 4.7vw, 66px); letter-spacing: -2.8px; }
   .project-body { padding: 24px; }
   .visual-caption { font-size: 12px; }
 }
+
+/* Full-name wordmark stays readable on compact screens. */
+.logo { font-size: 18px; letter-spacing: -0.5px; white-space: nowrap; }
+.footer .logo { font-size: 16px; }
+@media (max-width: 640px) {
+  .navigation { height: auto; min-height: 72px; flex-wrap: wrap; gap: 0 12px; padding-block: 10px; }
+  .navigation .logo { flex: 1; font-size: 16px; }
+  .nav-links { order: 3; width: 100%; justify-content: center; }
+  html { scroll-padding-top: 124px; }
+}
